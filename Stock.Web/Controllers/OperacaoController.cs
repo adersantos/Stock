@@ -8,21 +8,25 @@ namespace Stock.Web.Controllers
 {
     public class OperacaoController : Controller
     {
+        [Authorize]
         public ActionResult EntradaEstoque()
         {
             return View();
         }
 
+        [Authorize]
         public ActionResult SaidaEstqoue()
         {
             return View();
         }
 
+        [Authorize]
         public ActionResult LancPerdaProduto()
         {
             return View();
         }
 
+        [Authorize]
         public ActionResult Inventario()
         {
             return View();
