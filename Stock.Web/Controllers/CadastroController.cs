@@ -59,6 +59,7 @@ namespace Stock.Web.Controllers
                         retorno.Nome = model.Nome;
                         retorno.Ativo = model.Ativo;
                     }
+                    idSalvo = retorno.Id.ToString();
                 }
                 catch (Exception)
                 {
