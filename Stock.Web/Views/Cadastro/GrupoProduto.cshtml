@@ -104,11 +104,11 @@
 
 @section Scripts{
     <script>
-
         function abrir_form(dados) {
             $('#id_cadastro').val(dados.Id);
             $('#txt_nome').val(dados.Nome);
             $('#chk_ativo').prop('checked', dados.Ativo);
+
             var modal_cadastro = $('#modal_cadastro');
 
             $('#msg_mensagem_aviso').empty();
@@ -148,7 +148,6 @@
 
             return ret;
         }
-
 
         $(document)
           .on('click', '#btn_incluir', function () {
