@@ -20,14 +20,14 @@ namespace Stock.Web.Controllers
         [Authorize]
         public ActionResult GrupoProduto()
         {
-            return View(_lstGrupoProdutoModel);
+            return View(GrupoProdutoModel.ObterListaProduto());
         }
 
         [HttpPost]
         [Authorize]
-        public ActionResult ObterGrupoProduto(int id)
+        public ActionResult ObterGrupoProdutoPorId(int id)
         {
-            return Json(_lstGrupoProdutoModel.Find(p => p.Id == id));
+            return Json(GrupoProdutoModel.ObterGrupoProdutoPorId(id));
         }
 
         [HttpPost]
@@ -74,12 +74,7 @@ namespace Stock.Web.Controllers
         [Authorize]
         public ActionResult ExcluirGrupoProduto(int id)
         {
-            var retorno = _lstGrupoProdutoModel.Find(p => p.Id == id);
-            if (retorno != null)
-            {
-                _lstGrupoProdutoModel.Remove(retorno);
-            }
-            return Json(retorno);
+            return Json(GrupoProdutoModel.ExcluirGrupoProduto(id));
         }
 
         [Authorize]
