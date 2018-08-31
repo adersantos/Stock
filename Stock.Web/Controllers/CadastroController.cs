@@ -25,6 +25,7 @@ namespace Stock.Web.Controllers
 
         [HttpPost]
         [Authorize]
+        [ValidateAntiForgeryToken]
         public ActionResult ObterGrupoProdutoPorId(int id)
         {
             return Json(GrupoProdutoModel.ObterGrupoProdutoPorId(id));
@@ -32,6 +33,7 @@ namespace Stock.Web.Controllers
 
         [HttpPost]
         [Authorize]
+        [ValidateAntiForgeryToken]
         public ActionResult IncluirGrupoProduto(GrupoProdutoModel model)
         {
             var resultado = "OK";
@@ -72,12 +74,14 @@ namespace Stock.Web.Controllers
 
         [HttpPost]
         [Authorize]
+        [ValidateAntiForgeryToken]
         public ActionResult ExcluirGrupoProduto(int id)
         {
             return Json(GrupoProdutoModel.ExcluirGrupoProduto(id));
         }
 
         [Authorize]
+        [ValidateAntiForgeryToken]
         public ActionResult MarcaProduto()
         {
             return View();

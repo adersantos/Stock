@@ -30,6 +30,13 @@ namespace Stock.Web
                 Response.Write("{\"Resultado\" : \"AVISO\",\"Mensagens\" :[\"Somente texto sem caracteres especiais.\"]}");
                 Response.End();
             }
+            else if(ex is HttpAntiForgeryException)
+            {
+                Response.Clear();
+                Response.StatusCode = 200;
+                Response.End();
+                //TODO - Gravar log
+            }
         }
     }
 }

@@ -30,7 +30,7 @@ namespace Stock.Web.Models
                 using (var comando = new SqlCommand())
                 {
                     comando.Connection = conexao;
-                    comando.CommandText = $"select count(*) from usuario where login = @login and senha=@senha";
+                    comando.CommandText = $"select * from usuario where login = @login and senha=@senha";
                     comando.Parameters.Add("@login", SqlDbType.VarChar).Value = login;
                     comando.Parameters.Add("@senha", SqlDbType.VarChar).Value = CriptoHelper.HashMD5(senha);
 
